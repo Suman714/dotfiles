@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script to run zellij/tmux in current working dir.
+
+zellij --layout compact -s $(find /disk/Documents -mindepth 1 -maxdepth 1 -type d | fzf | sed 's/.*\///g')
