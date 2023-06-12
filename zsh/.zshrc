@@ -32,9 +32,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-eval "$(starship init zsh)"
-source "$HOME/.local/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
@@ -44,6 +41,8 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 _comp_options+=(globdots) # With hidden file
-source "$HOME/.local/zsh/completion.zsh"
+source "$HOME/dotfiles/zsh/completion.zsh"
+source "$HOME/dotfiles/zsh/prompt.zsh"
+source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
