@@ -6,8 +6,10 @@ alias btop="btop --utf-force"
 alias ls="lsd --group-dirs first"
 alias tmux="tmux -u"
 alias ti="tmuxnew"
+alias zi="zellijnew"
 alias ts="tmux-sessionizer"
 alias ta="tmux a"
+alias za="zellij a"
 alias kt="kitty +kitten themes"
 
 #vim keybinding
