@@ -1,20 +1,20 @@
 import:
-  - ~/.config/alacritty/themes/gruvbox_material.yml
+  - ~/.config/alacritty/themes/monokai_charcoal.yaml
 
 window:
-  opacity: 0.9
+  opacity: 0.85
 
 font:
   normal:
-    family: ComicShannsMono Nerd Font
+    family: Victor Mono
     style: regular
 
   italic:
-    family: ComicShannsMono Nerd Font
+    family: Victor Mono
     style: Italic
 
   bold_italic:
-    family: ComicShannsMono Nerd Font
+    family: Victor Mono
     style: Bold Italic
 
   size: 11

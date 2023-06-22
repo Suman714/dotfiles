@@ -17,6 +17,13 @@
 
 (add-hook 'emacs-startup-hook #'efs/display-startup-time)
 
+;;set UTF-8 encoding
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 ;; Initialize package sources
 (require 'package)
 

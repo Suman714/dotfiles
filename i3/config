@@ -47,7 +47,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec kitty
+bindsym $mod+t exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
