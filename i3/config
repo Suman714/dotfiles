@@ -60,12 +60,12 @@ bindsym $mod+r exec --no-startup-id dmenu_run -nb "#0a0a0a" -nf "#D3C6AA" -sb "#
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 #Borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 
 # class                 border  backgr. text    indicator child_border                                                                     
 client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340                                                                            
 client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340                                                                            
-client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #f0c674                                                                            
+client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #2196f3                                                                            
 
 # change focus
 bindsym $mod+h focus left

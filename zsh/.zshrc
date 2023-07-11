@@ -48,3 +48,6 @@ source "$HOME/dotfiles/zsh/prompt.zsh"
 source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# opam configuration
+[[ ! -r /home/suman/.opam/opam-init/init.zsh ]] || source /home/suman/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
