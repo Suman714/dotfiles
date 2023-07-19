@@ -229,4 +229,4 @@ bar {
 exec_always nitrogen --restore
 # for transparency
 exec --no-startup-id compton
-exec_always xrandr --output HDMI-0 --mode 1366x768 --pos 1920x0 --rotate normal --output eDP-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
+exec_always xrandr --output HDMI-0 --mode 1366x768 --pos 1920x0 --rotate normal --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
