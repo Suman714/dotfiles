@@ -47,13 +47,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec alacritty
+bindsym $mod+t exec kitty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec --no-startup-id dmenu_run -nb "#0a0a0a" -nf "#D3C6AA" -sb "#2E3440" -sf "#EBCB8B"
+bindsym $mod+r exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
