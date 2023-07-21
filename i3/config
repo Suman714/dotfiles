@@ -19,7 +19,7 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 bindsym $mod+m exec --no-startup-id i3lock --image /home/suman/Pictures/Wallpapers/wp5742980-sleeping-anime-girl-wallpapers.png
-bindsym $mod+x exec --no-startup-id systemctl poweroff -i, mode "default"  
+bindsym $mod+x exec --no-startup-id systemctl poweroff -i, mode "default"
 bindsym $mod+b exec --no-startup-id systemctl reboot, mode "default"
 
 
@@ -47,7 +47,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec kitty
+bindsym $mod+t exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -60,12 +60,12 @@ bindsym $mod+r exec --no-startup-id rofi -show run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 #Borders
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
-# class                 border  backgr. text    indicator child_border                                                                     
-client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340                                                                            
-client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340                                                                            
-client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #2196f3                                                                            
+# class                 border  backgr. text    indicator child_border
+client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340
+client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340
+client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #2196f3
 
 # change focus
 bindsym $mod+h focus left
@@ -189,7 +189,7 @@ mode "resize" {
 bindsym $mod+p mode "resize"
 bindsym $mod+Tab workspace back_and_forth
 
-##for screenshot- install 
+##for screenshot- install
 # clip copyq maim
 
 ##  Screenshots in files
@@ -229,4 +229,4 @@ bar {
 exec_always nitrogen --restore
 # for transparency
 exec --no-startup-id compton
-exec_always xrandr --output HDMI-0 --mode 1366x768 --pos 1920x0 --rotate normal --output eDP-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
+exec_always xrandr --output HDMI-0 --mode 1366x768 --pos 1920x0 --rotate normal --output eDP-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
