@@ -59,7 +59,6 @@ nnoremap <Leader>h :nohls<CR>
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 "FZF--------------------------------------------------------------------  {{{
-nnoremap <Leader>tt :vsp \| terminal<CR>
 nnoremap <silent> <Leader>sb :Buffers<CR>
 nnoremap <silent> <Leader>sf :Files<CR>
 nnoremap <silent> <Leader>sg :Rg<CR>
@@ -71,6 +70,13 @@ nnoremap <silent> <Leader>hh :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR>
 
+"}}}
+
+"Terminal-------------------------------------------------------------- {{{
+nnoremap <Leader>tt :vsp \| terminal<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-l> <C-\><C-n><C-w>l
 "}}}
 
 " PLUGINS ---------------------------------------------------------------- {{{
