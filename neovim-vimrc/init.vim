@@ -20,13 +20,14 @@ set hlsearch
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
- set laststatus=0
+set laststatus=0
 set undodir=os.getenv("HOME") .. "/.vim/undodir"
 set pumheight=10
 set guicursor=i:block
 
 "Color------------------------------------------------------------------- {{{
-colorscheme gruber-darker
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
 
 "Lexplorer---------------------------------------------------------------- {{{
 let g:netrw_keepdir = 0
@@ -92,12 +93,13 @@ call plug#begin()
 	Plug 'edkolev/tmuxline.vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 " Vim-ariline ----------------------------------------------------------- {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_theme='base16_black_metal'
+let g:airline_theme='tokyonight'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
