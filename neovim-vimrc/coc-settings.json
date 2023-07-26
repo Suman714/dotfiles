@@ -1,89 +1,42 @@
 {
 	"diagnostic.checkCurrentLine": true,
 	"languageserver": {
-//		"clangd": {
-//			"command": "clangd",
-//			"rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-//			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+		"clangd": {
+			"command": "clangd",
+			"rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
 		},
-		"fsharp": {
-			"command": "fsautocomplete",
-			"args": [],
-			"filetypes": ["fsharp"],
-			"trace.server": "verbose",
-			"initializationOptions": {
-				"AutomaticWorkspaceInit": true
-			},
-			"settings": {
-				"FSharp.keywordsAutocomplete": true,
-				"FSharp.ExternalAutocomplete": false,
-				"FSharp.Linter": true,
-				"FSharp.UnionCaseStubGeneration": true,
-				"FSharp.UnionCaseStubGenerationBody": "failwith \"Not Implemented\"",
-				"FSharp.RecordStubGeneration": true,
-				"FSharp.RecordStubGenerationBody": "failwith \"Not Implemented\"",
-				"FSharp.InterfaceStubGeneration": true,
-				"FSharp.InterfaceStubGenerationObjectIdentifier": "this",
-				"FSharp.InterfaceStubGenerationMethodBody": "failwith \"Not Implemented\"",
-				"FSharp.UnusedOpensAnalyzer": true,
-				"FSharp.UnusedDeclarationsAnalyzer": true,
-				"FSharp.UseSdkScripts": true,
-				"FSharp.SimplifyNameAnalyzer": false,
-				"FSharp.ResolveNamespaces": true,
-				"FSharp.EnableReferenceCodeLens": true
-			}
+		"ocaml-lsp": {
+			"command": "ocamllsp",
+			"filetypes": ["ocaml", "reason"]
 		},
-		"haskell": {
-			"command": "haskell-language-server-wrapper",
-			"args": [
-				"--lsp"
-			],
-			"rootPatterns": [
-				".stack.yaml",
-				".hie-bios",
-				"BUILD.bazel",
-				"cabal.config",
-				"package.yaml"
-			],
-			"filetypes": [
-				"hs",
-				"lhs",
-				"haskell"
-			],
-			"initializationOptions": {
-				"languageServerHaskell": {
-					"hlintOn": true,
-					"maxNumberOfProblems": 10,
-					"completionSnippetsOn": true
-				}
-			}
-		}
 	},
+
 	"suggest.completionItemKindLabels": {
-    "method": "  ",
-    "function": "  ",
-    "variable": "[]",
-    "field": "  ",
-    "typeParameter": "<>",
-    "constant": "  ",
-    "class": " פּ ",
-    "interface": " 蘒",
-    "struct": "  ",
-    "event": "  ",
-    "operator": "  ",
-    "module": "  ",
-    "property": "  ",
-    "enum": " 練",
-    "reference": "  ",
-    "keyword": "  ",
-    "file": "  ",
-    "folder": " ﱮ ",
-    "color": "  ",
-    "unit": " 塞 ",
-    "snippet": "  ",
-    "text": "  ",
-    "constructor": "  ",
-    "value": "  ",
-    "enumMember": "  "
-  }
+		"method": "  ",
+		"function": "  ",
+		"variable": "[]",
+		"field": "  ",
+		"typeParameter": "<>",
+		"constant": "  ",
+		"class": " פּ ",
+		"interface": " 蘒",
+		"struct": "  ",
+		"event": "  ",
+		"operator": "  ",
+		"module": "  ",
+		"property": "  ",
+		"enum": " 練",
+		"reference": "  ",
+		"keyword": "  ",
+		"file": "  ",
+		"folder": " ﱮ ",
+		"color": "  ",
+		"unit": " 塞 ",
+		"snippet": "  ",
+		"text": "  ",
+		"constructor": "  ",
+		"value": "  ",
+		"enumMember": "  "
+	},
 }
