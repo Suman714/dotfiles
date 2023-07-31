@@ -1,4 +1,6 @@
-;; You will most likely need to adjust this font size for your system!
+;; Emacs config
+
+;; Font size
 (defvar runemacs/default-font-size 180)
 
 (setq inhibit-startup-message t)
@@ -11,7 +13,7 @@
 (menu-bar-mode -1)            ; Disable the menu bar
 
 ;; Set up the visible bell
-(setq visible-bell t)
+(setq visible-bell -1)
 
 ;; set transparency
 (set-frame-parameter (selected-frame) 'alpha '(85 85))
@@ -24,6 +26,9 @@
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;;Yes or no
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Initialize package sources
 (require 'package)
@@ -79,6 +84,32 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
+
+;;Garbage Collection and Preformance
+(defvar aorst--gc-cons-threshold gc-cons-threshold)
+(defvar aorst--gc-cons-percentage gc-cons-percentage)
+(defvar aorst--file-name-handler-alist file-name-handler-alist)
+
+(setq-default gc-cons-threshold 402653184
+              gc-cons-percentage 0.6
+              file-name-handler-alist nil)
+
+(defun aorst/restore-defaults-after-init ()
+  "Restore default values after initialization."
+  (setq-default gc-cons-threshold aorst--gc-cons-threshold
+                gc-cons-percentage aorst--gc-cons-percentage
+                file-name-handler-alist aorst--file-name-handler-alist))
+
+(add-hook 'after-init-hook #'aorst/restore-defaults-after-init)
+
+(setq read-process-output-max (* 1024 1024 4) ; 4mb
+      inhibit-compacting-font-caches t
+      message-log-max 16384)
+
+;;Native compiled emacs lisp
+(when (featurep 'native-compile)
+  (setq native-comp-deferred-compilation t)
+  (setq native-comp-async-report-warnings-errors nil))
 
 ;; NOTE: The first time you load your configuration on a new machine, you'll
 ;; need to run the following command interactively so that mode line icons
@@ -169,6 +200,15 @@
 
 (rune/leader-keys
   "ts" '(hydra-text-scale/body :which-key "scale text"))
+
+;;Magit
+(use-package magit
+  :ensure t
+  :config
+  (setq magit-push-always-verify nil)
+  (setq git-commit-summary-max-length 50)
+  :bind
+  ("M-g" . magit-status))
 
 ;;LSP mode
 (use-package lsp-mode
@@ -320,3 +360,35 @@
 ;;C/C++
 (add-hook 'c-mode 'lsp)
 (add-hook 'c++-mode 'lsp)
+
+;;ocaml
+(let ((opam-share (ignore-errors (car (process-lines "opam" "var"
+						     "share")))))
+  (when (and opam-share (file-directory-p opam-share))
+    ;; Register Merlin
+    (add-to-list 'load-path (expand-file-name "emacs/site-lisp"
+					      opam-share))
+    (autoload 'merlin-mode "merlin" nil t nil)
+    ;; Automatically start it in OCaml buffers
+    (add-hook 'tuareg-mode-hook 'merlin-mode t)
+    (add-hook 'caml-mode-hook 'merlin-mode t)
+    ;; Use opam switch to lookup ocamlmerlin binary
+    (setq merlin-command 'opam)))
+
+;;vterm
+(use-package vterm
+  :ensure t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(lsp-semantic-tokens-enable nil nil nil "Customized with use-package lsp-mode")
+ '(package-selected-packages
+   '(magit subr flycheck-inline vterm flycheck which-key use-package tree-sitter-langs rust-mode rainbow-delimiters lsp-ui lsp-ivy ivy-rich hydra helpful general evil-nerd-commenter evil-collection doom-themes doom-modeline counsel company-box command-log-mode all-the-icons)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
