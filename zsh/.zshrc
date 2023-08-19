@@ -1,15 +1,13 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-alias ll="ls -Alh"
+alias ll="ls -la"
 alias btop="btop --utf-force"
-alias ls="lsd --group-dirs first"
+alias ls="exa --icons"
 alias tmux="tmux -u"
 alias ti="tmuxnew"
-alias zi="zellijnew"
 alias ts="tmux-sessionizer"
 alias ta="tmux a"
-alias za="zellij a"
 alias kt="kitty +kitten themes"
 
 #vim keybinding
