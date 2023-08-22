@@ -47,7 +47,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec kitty
+bindsym $mod+t exec wezterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -63,9 +63,13 @@ bindsym $mod+r exec --no-startup-id rofi -show drun
 for_window [class="^.*"] border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340
-client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #063340
-client.focused          #d9d9d9 #cecece #000000 #d9d9d9 #2196f3
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # change focus
 bindsym $mod+h focus left
