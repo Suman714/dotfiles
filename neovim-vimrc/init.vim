@@ -83,7 +83,6 @@ tnoremap <C-l> <C-\><C-n><C-w>l
 
 call plug#begin()
 	Plug 'tpope/vim-commentary'
-	Plug 'ionide/Ionide-vim'
 	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'folke/zen-mode.nvim'
 	Plug 'tribela/vim-transparent'
