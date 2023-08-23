@@ -66,7 +66,7 @@ git_prompt_status() {
 
 
 prompt_git_branch() {
-    autoload -Uz vcs_info 
+    autoload -Uz vcs_info
     precmd_vcs_info() { vcs_info }
     precmd_functions+=( precmd_vcs_info )
     setopt prompt_subst
@@ -103,7 +103,7 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
     prompt_git_branch
-    PROMPT=$'%B%F{8}%1~%f%b %F{green}<%f[$(prompt_git_info)$(git_prompt_status)]%(?.%F{green}>.%F{red}!%?)%f '
+    PROMPT=$'%B%F{8}%1~%f%b %F{green}◆%f[$(prompt_git_info)$(git_prompt_status)]%(?.%F{green}◆❯❯❯.%F{red}✗%?)%f '
 }
 
 prompt_purification_setup
