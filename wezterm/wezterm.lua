@@ -10,14 +10,16 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.window_close_confirmation = 'NeverPrompt'
+
 -- This is where you actually apply your config choices
 config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 18
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Batman'
+config.color_scheme = 'rose-pine'
 config.enable_tab_bar = false
-config.window_background_opacity = 0.7
+config.window_background_opacity = 0.8
 -- and finally, return the configuration to wezterm
 return config
 
