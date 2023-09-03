@@ -11,16 +11,18 @@ configuration {
 @theme "/dev/null"
 
 * {
-	bg:				#0d0f18;
-	fg:				#a5b6cf;
-	accent:				#c296eb;
-	button:				#11131c;
+	bg:				#1E2326;
+	fg:				#D3C6AA;
+	accent:				#31748f;
+	button:				#3C4841;
 
 	background-color:		@bg;
 	text-color:			@fg;
 }
 
 window {
+  border: 2px;
+  border-color: @fg;
 	border-radius:                  7px;
 	width:			    	37%;
 	padding: 			5px;
@@ -43,6 +45,8 @@ entry {
 
 inputbar {
 	children:			[ prompt, entry ];
+      border: 2px;
+      border-color: @fg;
     	background-color:               @button;
     	expand:                         false;
     	border-radius:                  6px;
@@ -87,6 +91,8 @@ element-text, element-icon {
 }
 
 element selected {
-    	background-color:               @button;
-    	border-radius:                  6px;
+        border: 2px;
+        border-color: @fg;
+        background-color:               @button;
+        border-radius:                  6px;
 }
