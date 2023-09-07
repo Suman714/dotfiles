@@ -2,13 +2,11 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 alias ll="ls -la"
-alias btop="btop --utf-force"
 alias ls="exa --icons"
 alias tmux="tmux -u"
 alias ti="tmuxnew"
 alias ts="tmux-sessionizer"
 alias ta="tmux a"
-alias emacs="emacs -nw"
 
 #vim keybinding
 bindkey -v
@@ -48,11 +46,6 @@ source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.local/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#d3c6aa,hl:#dbbc7f
- --color=fg+:#d0d0d0,bg+:#262626,hl+:#a7c080
- --color=info:#afaf87,prompt:#e67e80,pointer:#e69875
- --color=marker:#a7c080,spinner:#d699b6,header:#87afaf'
 
 # opam configuration
 [[ ! -r /home/suman/.opam/opam-init/init.zsh ]] || source /home/suman/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
