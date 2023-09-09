@@ -94,7 +94,7 @@ prompt_purification_setup() {
 
     ZSH_THEME_GIT_PROMPT_ADDED="%F{green}%f "
     ZSH_THEME_GIT_PROMPT_MODIFIED="%F{6}%f "
-    ZSH_THEME_GIT_PROMPT_DELETED="%F{red}x%f "
+    ZSH_THEME_GIT_PROMPT_DELETED="%F{red}✗%f "
     ZSH_THEME_GIT_PROMPT_RENAMED="%F{magenta}➜%f "
     ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow}═%f "
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{cyan}%f "
@@ -103,7 +103,7 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
     prompt_git_branch
-    PROMPT=$'%B%F{8}%1~%f%b %F{green}%f[$(prompt_git_info)$(git_prompt_status)]%(?.%F{green}❯.%F{red}✗%?)%f '
+    PROMPT=$'%B%F{8}%1~%f%b %F{green}%f[$(prompt_git_info)$(git_prompt_status)]%(?.%F{green}.%F{red}✗ %?)%f '
 }
 
 prompt_purification_setup
