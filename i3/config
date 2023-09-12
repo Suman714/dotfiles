@@ -222,5 +222,5 @@ bar {
 # exec_always feh --bg-max $HOME/Pictures/Wallpapers/1633802977283.jpg
 exec_always nitrogen --restore
 # for transparency
-exec --no-startup-id compton
+exec --no-startup-id picom
 exec_always xrandr --output HDMI-1-0 --mode 1366x768 --pos 1920x0 --rotate normal --output eDP --primary --mode 1920x1080 --pos 0x0 --rotate normal
