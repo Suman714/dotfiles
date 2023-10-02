@@ -41,7 +41,7 @@ compinit
 _comp_options+=(globdots) # With hidden file
 source "$HOME/dotfiles/zsh/completion.zsh"
 source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 source "$HOME/.local/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

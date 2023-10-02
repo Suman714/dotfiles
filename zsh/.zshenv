@@ -1,4 +1,4 @@
-export PATH="/usr/local/node-v20.5.0-linux-x64/bin:$PATH"
+export PATH="$HOME/opt/node-v18.18.0-linux-x64/bin:$PATH"
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/opt
 export PATH=$PATH:~/go/bin/
