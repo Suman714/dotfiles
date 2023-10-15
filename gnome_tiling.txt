@@ -5,6 +5,7 @@ for i in $(seq 1 9); do gsettings set org.gnome.shell.keybindings switch-to-appl
 WorkSpace :->
 
 gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 10
 
 gsettings set org.gnome.shell.keybindings switch-to-application-1  []
