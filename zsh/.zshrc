@@ -39,7 +39,7 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit
 compinit
 _comp_options+=(globdots) # With hidden file
-source "$HOME/dotfiles/zsh/completion.zsh"
+source "$HOME/opt/dotfiles/zsh/completion.zsh"
 source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.local/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
@@ -66,7 +66,10 @@ zstyle ':vcs_info:*:*' check-for-changes true
 precmd() { print "" }
 PROMPT='%(?.%F{green}➜.%F{red}✗ )%f %B%F{14}%1~%f%b (${vcs_info_msg_0_}) '
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -x "$(command -v fzf)"  ]
+then
+    source /usr/share/fzf/key-bindings.zsh
+fi
 
 # opam configuration
 [[ ! -r /home/suman/.opam/opam-init/init.zsh ]] || source /home/suman/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
