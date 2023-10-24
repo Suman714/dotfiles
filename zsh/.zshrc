@@ -68,7 +68,7 @@ PROMPT='%(?.%F{green}➜.%F{red}✗ )%f %B%F{14}%1~%f%b (${vcs_info_msg_0_}) '
 
 if [ -x "$(command -v fzf)"  ]
 then
-    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/key-bindings.zsh 
 fi
 
 # opam configuration
