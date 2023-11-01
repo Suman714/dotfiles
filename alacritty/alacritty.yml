@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/papercolor_dark.yaml
+  - ~/.config/alacritty/themes/ubuntu.yaml
 
 env:
   TERM: xterm-256color
@@ -9,15 +9,15 @@ window:
 
 font:
   normal:
-    family: Victor Mono
+    family: JetBrainsMono Nerd Font
     style: regular
 
   italic:
-    family: Victor Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: Victor Mono
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
   size: 17
@@ -28,7 +28,7 @@ scrolling:
 key_bindings:
    - { key: V,        mods: Control|Shift, action: Paste            }
    - { key: C,        mods: Control|Shift, action: Copy             }
-   - { key: F11, action: ToggleFullscreen }
+   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
 
 shell:
