@@ -40,8 +40,8 @@ autoload -Uz compinit
 compinit
 _comp_options+=(globdots) # With hidden file
 source "$HOME/opt/dotfiles/zsh/completion.zsh"
-source "$HOME/.local/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$HOME/.local/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.config/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "/etc/zsh_command_not_found"
 
 eval "$(starship init zsh)"
