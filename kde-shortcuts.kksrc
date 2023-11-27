@@ -1,21 +1,17 @@
 [ActivityManager][Global Shortcuts]
 switch-to-activity-b6775a4b-c431-4fef-aea8-e7f4df546e95=
 
-[Alacritty.desktop][Global Shortcuts]
-New=
-_launch=Meta+T
-
 [KDE Keyboard Layout Switcher][Global Shortcuts]
 Switch to Next Keyboard Layout=Meta+Alt+K
 
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+]; Ctrl+PgDown
+Activate Next Tab=Ctrl+PgDown; Ctrl+]
 Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Back; Alt+Left
+Back=Alt+Left; Back
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
@@ -49,7 +45,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Alt+Home; Home Page
+Home=Home Page; Alt+Home
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -91,7 +87,7 @@ Undo=Ctrl+Z
 Up=Alt+Up
 WhatsThis=Shift+F1
 Zoom=
-ZoomIn=Ctrl++; Ctrl+=
+ZoomIn=Ctrl+=; Ctrl++
 ZoomOut=Ctrl+-
 
 [kaccess][Global Shortcuts]
@@ -119,7 +115,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Meta+X; Screensaver
+Lock Session=Screensaver; Meta+X
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 Reboot Without Confirmation=
@@ -129,7 +125,7 @@ Activate Window Demanding Attention=Meta+Ctrl+A
 Decrease Opacity=
 Edit Tiles=
 Expose=Ctrl+F9
-ExposeAll=Launch (C); Ctrl+F10
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 ExposeClassCurrentDesktop=
 Increase Opacity=
@@ -277,7 +273,7 @@ Window to Screen 5=
 Window to Screen 6=
 Window to Screen 7=
 view_actual_size=
-view_zoom_in=Meta++; Meta+=
+view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
 
 [mediacontrol][Global Shortcuts]
@@ -299,11 +295,11 @@ _launch=Launch (1)
 [org.kde.konsole.desktop][Global Shortcuts]
 NewTab=
 NewWindow=
-_launch=Ctrl+Alt+T
+_launch=Meta+T
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+Space; Alt+F2; Search
+_launch=Search; Alt+Space; Alt+F2
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=Meta+Ctrl+Alt+Shift+Space; Meta+.
