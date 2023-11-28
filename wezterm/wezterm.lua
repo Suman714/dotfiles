@@ -17,7 +17,7 @@ config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 18
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Ubuntu'
+config.color_scheme = 'JetBrainsMono Nerd Font'
 config.enable_tab_bar = false
 config.window_background_opacity = 0.9
 -- and finally, return the configuration to wezterm
