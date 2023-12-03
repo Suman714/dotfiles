@@ -18,7 +18,7 @@ config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 16
 
 -- For example, changing the color scheme:
-config.color_scheme = 'GruvboxDarkHard'
+config.color_scheme = 'kanagawabones'
 config.enable_tab_bar = false
 config.window_background_opacity = 0.85
 -- and finally, return the configuration to wezterm
