@@ -8,7 +8,7 @@ colors:
   # 0x Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: '0xbbbbbb'
-    cursor: '0xb4d5ff'
+    cursor: '#93a1a1'
 
   # 0x Normal colors
   normal:

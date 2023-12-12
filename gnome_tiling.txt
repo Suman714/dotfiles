@@ -13,6 +13,7 @@ gsettings set org.gnome.shell.extensions.tiling-assistant tile-maximize "['<Supe
 gsettings set org.gnome.shell.extensions.tiling-assistant tile-left-half "['<Super>h']"
 gsettings set org.gnome.shell.extensions.tiling-assistant tile-right-half "['<Super>l']"
 gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super>m']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']
 
 gsettings set org.gnome.shell.keybindings switch-to-application-1  []
 gsettings set org.gnome.shell.keybindings switch-to-application-2  []

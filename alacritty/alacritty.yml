@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/kanagawa_wave.yaml
+  - ~/.config/alacritty/themes/ubuntu.yaml
 
 live_config_reload: true
 
@@ -7,23 +7,23 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.87
+  opacity: 0.85
   decorations: None
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: CodeNewRoman Nerd Font
     style: regular
 
   italic:
-    family: JetBrainsMono Nerd Font
+    family: CodeNewRoman Nerd Font
     style: Italic
 
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: CodeNewRoman Nerd Font
     style: Bold Italic
 
-  size: 16
+  size: 18
 
 scrolling:
   history: 5000
