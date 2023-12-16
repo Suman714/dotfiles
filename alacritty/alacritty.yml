@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/tokyo-night-storm.yaml
+  - ~/.config/alacritty/themes/vs-code.yaml
 
 live_config_reload: true
 
@@ -12,18 +12,18 @@ window:
 
 font:
   normal:
-    family: CodeNewRoman Nerd Font
+    family: JetBrainsMono Nerd Font
     style: regular
 
   italic:
-    family: CodeNewRoman Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: CodeNewRoman Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
-  size: 18
+  size: 12
 
 scrolling:
   history: 5000
