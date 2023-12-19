@@ -38,11 +38,13 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 _comp_options+=(globdots) # With hidden file
 source "$HOME/opt/dotfiles/zsh/completion.zsh"
 source "$HOME/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.config/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "/etc/zsh_command_not_found"
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
 
 eval "$(starship init zsh)"
 
