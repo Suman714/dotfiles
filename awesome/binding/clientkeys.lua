@@ -14,19 +14,26 @@ function _M.get()
     awful.key({ modkey,           }, "f",
       function (c)
         c.fullscreen = not c.fullscreen
+        local cur_tag = client.focus and client.focus.first_tag or nil
+        for _, cls in ipairs(cur_tag:clients()) do
+          -- minimize all windows except the focused one
+          if c.window ~= cls.window then
+            cls.hidden = not cls.hidden
+          end
+        end
         c:raise()
       end,
       {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
-              {description = "close", group = "client"}),
+      {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
-              {description = "toggle floating", group = "client"}),
+      {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
-              {description = "move to master", group = "client"}),
+      {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
-              {description = "move to screen", group = "client"}),
+      {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
+      {description = "toggle keep on top", group = "client"}),
     awful.key({ modkey,           }, "n",
       function (c)
         -- The client currently has the input focus, so it cannot be
