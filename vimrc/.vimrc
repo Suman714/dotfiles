@@ -24,7 +24,11 @@ set undodir=os.getenv("HOME") .. "/.vim/undodir"
 set pumheight=10
 
 "Color------------------------------------------------------------------- {{{
-colorscheme habamax
+colorscheme desert
+highlight   LineNrAbove guifg=red term=bold
+highlight   LineNr  guifg=white term=bold
+highlight   LineNrBelow  guifg=green term=bold
+
 
 "Lexplorer---------------------------------------------------------------- {{{
 let g:netrw_keepdir = 0
@@ -83,4 +87,3 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2
 
 " }}}
-

@@ -10,3 +10,6 @@
 `toolkit.legacyUserProfileCustomizations.stylesheets`
 
 If all emojis won't show on starship prompt install Google Noto emoji fonts.
+
+## For jio
+185.199.108.133 raw.githubusercontent.com
