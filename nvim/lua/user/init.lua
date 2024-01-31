@@ -1,0 +1,6 @@
+require "user.keymaps"
+require "user.netrw"
+require "user.options"
+require "user.plugins"
+require "user.statusline"
+require "user.colorscheme"

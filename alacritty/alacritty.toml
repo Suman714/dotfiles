@@ -1,0 +1,26 @@
+live_config_reload = true
+
+import = [
+    "~/.config/alacritty/themes/themes/dracula.toml"
+]
+
+[window]
+opacity = 0.8
+
+[env]
+TERM = "xterm-256color"
+
+[scrolling]
+history = 10000
+multiplier = 4
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+
+[selection]
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+  { key = "Return",   mods = "Alt",           action = "ToggleFullscreen" }
+]

@@ -1,0 +1,9 @@
+export PATH="$HOME/opt/node-v20.11.0-linux-x64/bin:$PATH"
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/share/go/bin
+export GOPATH=$HOME/.local/share/go
+export PATH="/home/suman/.config/scripts:$PATH"
+export PATH="/home/suman/opt/jdk-21.0.1+12/bin:$PATH"
+export PATH="/home/suman/opt/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"

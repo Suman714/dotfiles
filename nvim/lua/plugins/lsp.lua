@@ -1,0 +1,109 @@
+local M = {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"williamboman/mason.nvim",
+	},
+}
+
+function M.config()
+	local border = {
+		{ "🭽", "FloatBorder" },
+		{ "▔", "FloatBorder" },
+		{ "🭾", "FloatBorder" },
+		{ "▕", "FloatBorder" },
+		{ "🭿", "FloatBorder" },
+		{ "▁", "FloatBorder" },
+		{ "🭼", "FloatBorder" },
+		{ "▏", "FloatBorder" },
+	}
+
+	-- LSP settings (for overriding per client)
+	local handlers = {
+		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+	}
+
+	vim.diagnostic.config({
+		virtual_text = true,
+		signs = true,
+		underline = true,
+		update_in_insert = false,
+		severity_sort = false,
+	})
+
+	local lspconfig = require("lspconfig")
+
+	local servers = { "lua_ls", "rust_analyzer", "clangd", "ocamllsp", "tsserver", "pyright", "clojure_lsp", "gopls" }
+
+	for _, server in ipairs(servers) do
+		lspconfig[server].setup({
+			root_dir = function()
+				return vim.loop.cwd()
+			end,
+			handlers = handlers,
+			settings = {
+				Lua = {
+					diagnostics = { globals = { "vim" } },
+				},
+			},
+		})
+	end
+
+	-- Global mappings.
+	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+	vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
+	-- Use LspAttach autocommand to only map the following keys
+	-- after the language server attaches to the current buffer
+	vim.api.nvim_create_autocmd("LspAttach", {
+		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		callback = function(ev)
+			-- Enable completion triggered by <c-x><c-o>
+			vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+			-- Buffer local mappings.
+			-- See `:help vim.lsp.*` for documentation on any of the below functions
+			local opts = { buffer = ev.buf }
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, opts)
+			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "<space>lf", function()
+				vim.lsp.buf.format({ async = true })
+			end, opts)
+		end,
+	})
+
+	vim.cmd([[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]])
+	vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
+	require("mason").setup({
+		ui = {
+			border = "none",
+			icons = {
+				package_installed = "◍",
+				package_pending = "◍",
+				package_uninstalled = "◍",
+			},
+		},
+		log_level = vim.log.levels.INFO,
+		max_concurrent_installers = 4,
+	})
+	require("mason-lspconfig").setup({
+		ensure_installed = { "lua_ls" },
+		settings = {},
+	})
+end
+
+return M
